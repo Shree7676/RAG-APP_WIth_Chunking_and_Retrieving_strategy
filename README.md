@@ -24,27 +24,27 @@ This repository already has a basic structure to help you get started and point 
 
 ## Solution 
 
-Text Extraction Strategy:
-     - PDFs: Converted to images, then to a new PDF, then to Markdown using Docling. 
-         - pdf -> image -> pdf (improves text extraction, if the pdf contains mixture of text and image which has text in it)
-     - DOCX/XLSX: Converted directly to Markdown using Docling.
-     - MSG: Converted to Markdown with metadata (subject, sender, etc.) preserved.
+### Text Extraction Strategy:
+- PDFs: Converted to images, then to a new PDF, then to Markdown using Docling. 
+    - pdf -> image -> pdf (improves text extraction, if the pdf contains mixture of text and image which has text in it)
+- DOCX/XLSX: Converted directly to Markdown using Docling.
+- MSG: Converted to Markdown with metadata (subject, sender, etc.) preserved.
 
-Embeding Strategy :
-     - Detects tables and processes each as a complete chunk.
-     - If markdown contains '##' sections, splits based on these while respecting chunk_size and chunk_overlap.
-     - If no headers are present, splits sequentially by size with overlap for continuity.
+### Embeding Strategy :
+- Detects tables and processes each as a complete chunk.
+- If markdown contains '##' sections, splits based on these while respecting chunk_size and chunk_overlap.
+- If no headers are present, splits sequentially by size with overlap for continuity.
 
-Retrieval strategy:
-     - Embeds the query and retrieves initial matches via vector similarity.
-     - Refines results using metadata (keywords, summary, description, filename).
-     - Combines vector similarity and metadata scores to rank and return top-k chunks.
+### Retrieval strategy:
+- Embeds the query and retrieves initial matches via vector similarity.
+- Refines results using metadata (keywords, summary, description, filename).
+- Combines vector similarity and metadata scores to rank and return top-k chunks.
 
-Query :
-     - Retrieves top_k chunks from the vector database, optionally filtered by filename.
-     - Builds context from chunk content, metadata, and similarity scores.
-     - Queries the LLM with the formatted context and question.
-     - Falls back to a no-context query if retrieval fails.
+### Query :
+- Retrieves top_k chunks from the vector database, optionally filtered by filename.
+- Builds context from chunk content, metadata, and similarity scores.
+- Queries the LLM with the formatted context and question.
+- Falls back to a no-context query if retrieval fails.
         
 ## Setup
 
