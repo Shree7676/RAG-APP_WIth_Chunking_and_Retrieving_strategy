@@ -47,9 +47,9 @@ You can find the OpenAPI specification here: [OpenAPI Specification](https://ass
 
 You have to authenticate at the API. Use your assigned **API Key** for that purpose. Put it into a `.env` file located in the root of the project.
 
-## Run the below commands in order as the vectordb is not updated by default
+## 
 
-## Run
+## Run the below commands in order as the vectordb is not updated by default
 ```bash
 # Get the file's content as markdown
 ./associate --mode=get-markdown
