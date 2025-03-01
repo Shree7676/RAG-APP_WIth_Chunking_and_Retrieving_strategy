@@ -30,4 +30,5 @@ def embed_texts(texts: List[str], input_type: Literal['document', 'query']) -> L
     'input_type': input_type
   }, headers=headers)
   response.raise_for_status()
-  return response.json()
+  result = response.json()
+  return result['embeddings']

@@ -14,9 +14,9 @@ Try to answer as thruthfully as possible.
 
 | Name                     | xxxxx        |
 |--------------------------|--------------|
-| E-Mail:                  | xxxxx@xxx.xx |
-| Approx. Time To Complete | xx hours     |
-| My github:               | xxxxxxx      |
+| E-Mail:                  | shreekantnandiyawar@gmail.com |
+| Approx. Time To Complete | 10+ hours     |
+| My github:               | [shree7676](https://github.com/shree7676)      |
 
 ## The task
 
@@ -47,6 +47,8 @@ You can find the OpenAPI specification here: [OpenAPI Specification](https://ass
 
 You have to authenticate at the API. Use your assigned **API Key** for that purpose. Put it into a `.env` file located in the root of the project.
 
+## Run the below commands in order as the vectordb is not updated by default
+
 ## Run
 ```bash
 # Get the file's content as markdown
@@ -60,4 +62,7 @@ You have to authenticate at the API. Use your assigned **API Key** for that purp
 
 # Ask a question about the documents
 ./associate "[question]"
+
+# UI Interface to chat
+./associate --mode=gradio
 ```

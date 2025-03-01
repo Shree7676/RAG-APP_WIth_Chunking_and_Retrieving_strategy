@@ -1,3 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env python3
+import dotenv
+dotenv.load_dotenv()
 
-python3 . "$@"
+import logging
+import logging.config
+import os
+from src.main import App
+
+log_file_path = os.path.join(os.path.dirname(__file__), 'logging.conf')
+logging.config.fileConfig(log_file_path, disable_existing_loggers=False)
+logger = logging.getLogger()
+
+if __name__ == "__main__":
+    app = App()
+    app.run()
